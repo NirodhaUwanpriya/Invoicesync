@@ -2,7 +2,7 @@
 
 An event-driven middleware service built with Node.js and Express that automatically synchronizes "Closed Won" deals from HubSpot CRM to QuickBooks Online (QBO) as new Invoices and Customer records without manual double-entry.
 
-## 🏗️ Architecture & System Flow
+##  Architecture & System Flow
 
 ```mermaid
 flowchart LR
@@ -36,21 +36,21 @@ flowchart LR
          v                                   v                                       v
 ```
 
-## ✨ Features
+## Features
 
 - **Event-Driven Integration**: Responds instantly to HubSpot webhook triggers.
 - **Automated Customer Matching**: Checks QuickBooks for existing customer records via email before creating new entries (prevents duplicate data).
 - **Automatic Invoice Generation**: Maps deal amount and contact details directly into QBO invoice schemas.
 - **OAuth 2.0 Auto-Refresh**: Manages rotating QuickBooks tokens dynamically using local persistence (`tokens.json`).
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Runtime**: Node.js
 - **Framework**: Express.js
 - **HTTP Client**: Axios
 - **Environment Configuration**: Dotenv
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1. Prerequisites
 
@@ -85,7 +85,7 @@ QBO_ENVIRONMENT=sandbox
 QBO_COMPANY_ID=your_sandbox_realm_id
 ```
 
-## 🔑 Initial QuickBooks Authorization Flow
+## Initial QuickBooks Authorization Flow
 
 To establish the initial OAuth connection without relying on third-party tools:
 
@@ -108,7 +108,7 @@ To establish the initial OAuth connection without relying on third-party tools:
 
    Authorize your QuickBooks Sandbox company. The authorization code will be exchanged for access/refresh tokens and stored automatically in `tokens.json`.
 
-## 📡 Webhook Configuration (HubSpot)
+## Webhook Configuration (HubSpot)
 
 1. Navigate to HubSpot Automation ➔ Workflows.
 2. Create a new Deal-based workflow triggered when Deal Stage = Closed Won.
@@ -124,7 +124,7 @@ To establish the initial OAuth connection without relying on third-party tools:
      - `company` ➔ Company Name
 4. Turn on the workflow.
 
-## 🧪 Testing the Integration
+## Testing the Integration
 
 1. Ensure the server is running (`node server.js`).
 2. Move a deal to Closed Won in HubSpot.
